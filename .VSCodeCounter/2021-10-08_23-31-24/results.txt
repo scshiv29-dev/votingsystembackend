@@ -1,0 +1,51 @@
+Date : 2021-10-08 23:31:24
+Directory : e:\PROJECT\Project\AgroMart-backend
+Total : 21 files,  7299 codes, 46 comments, 145 blanks, all 7490 lines
+
+Languages
++------------+------------+------------+------------+------------+------------+
+| language   | files      | code       | comment    | blank      | total      |
++------------+------------+------------+------------+------------+------------+
+| JSON       |          2 |      6,397 |          0 |          2 |      6,399 |
+| JavaScript |         16 |        844 |         46 |        143 |      1,033 |
+| XML        |          3 |         58 |          0 |          0 |         58 |
++------------+------------+------------+------------+------------+------------+
+
+Directories
++-------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                        | files      | code       | comment    | blank      | total      |
++-------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                           |         21 |      7,299 |         46 |        145 |      7,490 |
+| .idea                                                       |          3 |         58 |          0 |          0 |         58 |
+| controllers                                                 |          5 |        423 |         18 |         62 |        503 |
+| models                                                      |          4 |        154 |          0 |         18 |        172 |
+| routes                                                      |          6 |        228 |         22 |         55 |        305 |
++-------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++-------------------------------------------------------------+------------+------------+------------+------------+------------+
+| filename                                                    | language   | code       | comment    | blank      | total      |
++-------------------------------------------------------------+------------+------------+------------+------------+------------+
+| e:\PROJECT\Project\AgroMart-backend\.idea\AgroMart.iml      | XML        |         12 |          0 |          0 |         12 |
+| e:\PROJECT\Project\AgroMart-backend\.idea\modules.xml       | XML        |          8 |          0 |          0 |          8 |
+| e:\PROJECT\Project\AgroMart-backend\.idea\workspace.xml     | XML        |         38 |          0 |          0 |         38 |
+| e:\PROJECT\Project\AgroMart-backend\app.js                  | JavaScript |         39 |          6 |          8 |         53 |
+| e:\PROJECT\Project\AgroMart-backend\controllers\auth.js     | JavaScript |         77 |          5 |         14 |         96 |
+| e:\PROJECT\Project\AgroMart-backend\controllers\category.js | JavaScript |         61 |          0 |          9 |         70 |
+| e:\PROJECT\Project\AgroMart-backend\controllers\order.js    | JavaScript |         71 |          0 |          8 |         79 |
+| e:\PROJECT\Project\AgroMart-backend\controllers\product.js  | JavaScript |        152 |         12 |         22 |        186 |
+| e:\PROJECT\Project\AgroMart-backend\controllers\user.js     | JavaScript |         62 |          1 |          9 |         72 |
+| e:\PROJECT\Project\AgroMart-backend\models\category.js      | JavaScript |         14 |          0 |          3 |         17 |
+| e:\PROJECT\Project\AgroMart-backend\models\order.js         | JavaScript |         34 |          0 |          6 |         40 |
+| e:\PROJECT\Project\AgroMart-backend\models\product.js       | JavaScript |         42 |          0 |          3 |         45 |
+| e:\PROJECT\Project\AgroMart-backend\models\user.js          | JavaScript |         64 |          0 |          6 |         70 |
+| e:\PROJECT\Project\AgroMart-backend\package-lock.json       | JSON       |      6,365 |          0 |          1 |      6,366 |
+| e:\PROJECT\Project\AgroMart-backend\package.json            | JSON       |         32 |          0 |          1 |         33 |
+| e:\PROJECT\Project\AgroMart-backend\routes\auth.js          | JavaScript |         23 |          0 |          5 |         28 |
+| e:\PROJECT\Project\AgroMart-backend\routes\category.js      | JavaScript |         38 |          6 |         10 |         54 |
+| e:\PROJECT\Project\AgroMart-backend\routes\order.js         | JavaScript |         59 |          5 |         10 |         74 |
+| e:\PROJECT\Project\AgroMart-backend\routes\product.js       | JavaScript |         42 |          7 |         10 |         59 |
+| e:\PROJECT\Project\AgroMart-backend\routes\razorpay.js      | JavaScript |         53 |          4 |         13 |         70 |
+| e:\PROJECT\Project\AgroMart-backend\routes\user.js          | JavaScript |         13 |          0 |          7 |         20 |
+| Total                                                       |            |      7,299 |         46 |        145 |      7,490 |
++-------------------------------------------------------------+------------+------------+------------+------------+------------+

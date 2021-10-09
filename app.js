@@ -6,7 +6,7 @@ const app = express();
 const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
 const cors = require("cors");
-
+const path = require('path')
 //My routes
 const authRoutes = require("./routes/auth");
 const userRoutes = require("./routes/user");
@@ -20,7 +20,7 @@ mongoose
   .connect(process.env.DATABASE, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
-    useCreateIndex: true
+    useCreateIndex: true,
   })
   .then(() => {
     console.log("DB CONNECTED");
@@ -40,6 +40,11 @@ app.use("/api", orderRoutes);
 app.use("/api",razorpayRoutes)
 //PORT
 const port = process.env.PORT || 8000;
+
+
+app.get('/api/logo', (req, res) => {
+	res.sendFile(path.join(__dirname, 'apple-touch-icon.png'))
+})
 
 //Starting a server
 app.listen(port, () => {

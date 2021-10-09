@@ -37,18 +37,6 @@ exports.updateUser = (req, res) => {
   );
 };
 
-exports.userPurchaseList = (req, res) => {
-  Order.find({ user: req.profile._id })
-    .populate("user", "_id name")
-    .exec((err, order) => {
-      if (err) {
-        return res.status(400).json({
-          error: "No Order in this account"
-        });
-      }
-      return res.json(order);
-    });
-};
 
 exports.pushOrderInPurchaseList = (req, res, next) => {
   let purchases = [];
@@ -79,3 +67,5 @@ exports.pushOrderInPurchaseList = (req, res, next) => {
     }
   );
 };
+
+

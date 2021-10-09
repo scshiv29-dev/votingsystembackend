@@ -1,3 +1,4 @@
+const { ObjectId } = require("mongoose");
 const { Order, ProductCart } = require("../models/order");
 
 exports.getOrderById = (req, res, next, id) => {
@@ -45,7 +46,7 @@ exports.getOrderStatus = (req, res) => {
 };
 
 exports.updateStatus = (req, res) => {
-  Order.update(
+  Order.updateOne(
     { _id: req.body.orderId },
     { $set: { status: req.body.status } },
     (err, order) => {
@@ -58,3 +59,21 @@ exports.updateStatus = (req, res) => {
     }
   );
 };
+
+exports.userPurchaseList = (req, res) => {
+  Order.find({ user: req.profile._id })
+    .populate("user", "_id name")
+    .exec((err, order) => {
+      if (err) {
+        return res.status(400).json({
+          error: "No Order in this account"
+        });
+      }
+      return res.json(order);
+    });
+};
+
+
+exports.getOneOrder=(req,res)=>{
+return res.json(req.order);
+}
