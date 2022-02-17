@@ -6,15 +6,11 @@ const app = express();
 const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
 const cors = require("cors");
-const path = require('path')
+const path = require("path");
 //My routes
 const authRoutes = require("./routes/auth");
 const userRoutes = require("./routes/user");
-const categoryRoutes = require("./routes/category");
-const productRoutes = require("./routes/product");
-const orderRoutes = require("./routes/order");
-const razorpayRoutes = require("./routes/razorpay");
-
+const verificationRoutes = require("./routes/verification");
 //DB Connection
 mongoose
   .connect(process.env.DATABASE, {
@@ -34,17 +30,14 @@ app.use(cors());
 //My Routes
 app.use("/api", authRoutes);
 app.use("/api", userRoutes);
-app.use("/api", categoryRoutes);
-app.use("/api", productRoutes);
-app.use("/api", orderRoutes);
-app.use("/api",razorpayRoutes)
+app.use("/api", verificationRoutes);
+
 //PORT
 const port = process.env.PORT || 8000;
 
-
-app.get('/api/logo', (req, res) => {
-	res.sendFile(path.join(__dirname, 'apple-touch-icon.png'))
-})
+app.get("/api/logo", (req, res) => {
+  res.sendFile(path.join(__dirname, "apple-touch-icon.png"));
+});
 
 //Starting a server
 app.listen(port, () => {

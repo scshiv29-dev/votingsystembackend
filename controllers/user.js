@@ -1,11 +1,10 @@
 const User = require("../models/user");
-const Order = require("../models/order");
 
 exports.getUserById = (req, res, next, id) => {
   User.findById(id).exec((err, user) => {
     if (err || !user) {
       return res.status(400).json({
-        error: "No user was found in DB"
+        error: "No user was found in DB",
       });
     }
     req.profile = user;
@@ -27,7 +26,7 @@ exports.updateUser = (req, res) => {
     (err, user) => {
       if (err) {
         return res.status(400).json({
-          error: "You are not authorized to update this user"
+          error: "You are not authorized to update this user",
         });
       }
       user.salt = undefined;
@@ -37,35 +36,17 @@ exports.updateUser = (req, res) => {
   );
 };
 
-
-exports.pushOrderInPurchaseList = (req, res, next) => {
-  let purchases = [];
-  req.body.order.products.forEach(product => {
-    purchases.push({
-      _id: product._id,
-      name: product.name,
-      description: product.description,
-      category: product.category,
-      quantity: product.quantity,
-      amount: req.body.order.amount,
-      transaction_id: req.body.order.transaction_id
-    });
-  });
-
-  //store thi in DB
-  User.findOneAndUpdate(
-    { _id: req.profile._id },
-    { $push: { purchases: purchases } },
-    { new: true },
-    (err, purchases) => {
+exports.giveVotingRight = (req, res) => {
+  User.updateOne(
+    { _id: req.body.userId },
+    { $set: { canVote: true } },
+    (err, user) => {
       if (err) {
         return res.status(400).json({
-          error: "Unable to save purchase list"
+          error: "cannot give voting right",
         });
       }
-      next();
+      res.json(user);
     }
   );
 };
-
-
